@@ -21,6 +21,7 @@ These rules are:
 ## Heap Data Structure
 ### Array Representation
 Heap Data Structure is a complete binary tree data structure. One of the most interesting properties of a **binary tree** is that we can use array representation. And, the indexes of the elements in the array can be used to find the parent or children of any node.
+*Note: Array can only be used as representation for complete binary trees*
 
 To further explain this, consider the following tree. It has 7 nodes, and each node can be arranged as an element of an array.
 ![image](https://github.com/trucdg/python-heapq/assets/91285203/e689a237-bcee-4b6b-a875-73b769c0b275)
@@ -35,7 +36,7 @@ Now, the index of a given element is **i**,
 
 
 ## Heap Python Module
-In python, you have the **heapq** module, with which you can create a min heap or max heap. When you create a heap using **heapq** function, **by default, the heap will always be the minheap**, meaning that each tiem the smallest element is popped from the heap.
+In python, you have the **heapq** module, with which you can create a min heap or max heap. When you create a heap using **heapq** function, **by default, the heap will always be the minheap**, meaning that each time the smallest element is popped from the heap.
 
 The **heapq** module has some relevant functions to perform various operations on the heap data structure.
 These functions are given below:
