@@ -52,7 +52,47 @@ These functions are given below:
 | 6 | nlargest | returns the k-largest elements from the heap | O(log(k)) |
 | 7 | nsmallest | returns the k-smallest elements from the heap | O(log(k)) |
 
+## Heap Data Structure Operations
+We will be discussing these operations over a max-heap since the same operations can be applied to a min-heap
+**Insertion in heap:**
+Consider we have an array with elements **10,8,5,15,6** in it. To build a max-heap using the given elements, we perform the following steps:
+1. **Add the first element**, **10** is in the tree. It is the root of the tree.
+2. **Add the next element in the tree. Compare it with the parent element.** If it is greater than its parent element, swap their positions. It is done to ensure that thee tree follows **heap** conditions. Here, 8 is inserted as the left child of the root element because **heap is filled from left to right**. No swapping occurs because 10 > 8.
+   
+<img src="https://github.com/trucdg/python-heapq/assets/91285203/40af7f45-cbb3-42c7-a0e6-aa9d5ab39adc" width="500" height="400">
 
+4. **Repeat the above step with the next element**
+   
+<img src="https://github.com/trucdg/python-heapq/assets/91285203/7b00c837-d6d6-4748-bf00-18d7a348c5c9" width="500" height="400">
+
+6. **Add the next element**, 15 in the tree.
+   
+<img src="https://github.com/trucdg/python-heapq/assets/91285203/50f0f8bd-29f8-42ba-9013-1b5ca0ca4dc7" width="500" height="400">
+
+Now, since **15** is greater than its parent element **8**,  this tree is not a **max-heap** anymore. To make it a **heap** again, we will swap the position of **8** and **15**.
+
+![image](https://github.com/trucdg/python-heapq/assets/91285203/7507fa02-5354-44a7-b220-e4025ab8fc31)
+
+
+Again, the obtained tree is not a max-heap since 15 > 10 (its parent). We will swap the position of **10** and **15**.
+
+![image](https://github.com/trucdg/python-heapq/assets/91285203/e43bace2-bb67-4db7-8f90-d72907c1e09e)
+
+This step is performed using recursion, and done until the inserted element finds its correct position in the heap.
+
+*Notice that **15** was first added at the bottom of the tree and then moved up to its correct position. This moving up of elements known as **bubbling up***
+
+**5. Add the last element**, 6 in the heap
+
+![image](https://github.com/trucdg/python-heapq/assets/91285203/9b2a799f-05fe-47f1-88ec-3561a063697f)
+
+One thing to note here is that a comparison is done each time an element is added. The number of comparisons also depends on the height of the tree. In the above case, a total of 5 comparisons were made. This results in a time complexity of O(nlog(n)) since the **height of a binary tree** is **log(n)** (There are n nodes. Each node, in the worst case, needs to be bubbled up log(n) levels -> nlog(n))
+
+But we cam reduce the number of comparisons by using a method called **heapify** where elements are first added into the tree and then arranged in a bottom-up fashion. It helps in reducing the number of comparisons, and thus the time complexity of the overall algorithm is O(n) (linear - using heapify).
+
+
+## How to HEAPIFY a Binary Tree?
+**Heapify** is the process of rearranging the elements 
 
 
 
