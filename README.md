@@ -92,7 +92,11 @@ But we cam reduce the number of comparisons by using a method called **heapify**
 
 
 ## How to HEAPIFY a Binary Tree?
-**Heapify** is the process of rearranging the elements 
+**Heapify** is the process of rearranging the elements to form a tree that maintains the properties of the **heap data structure.**
+
+Recall the **list/array** that had the elements - [10, 8, 5, 15, 6] in it. To **heapify** these elements, and form a **max-heap**, we follow the following steps:
+**1. Visualize all the elements of the list as a complete binary tree**
+Treat 
 
 
 
