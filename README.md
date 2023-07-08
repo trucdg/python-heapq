@@ -95,14 +95,52 @@ But we cam reduce the number of comparisons by using a method called **heapify**
 **Heapify** is the process of rearranging the elements to form a tree that maintains the properties of the **heap data structure.**
 
 Recall the **list/array** that had the elements - [10, 8, 5, 15, 6] in it. To **heapify** these elements, and form a **max-heap**, we follow the following steps:
-**1. Visualize all the elements of the list as a complete binary tree**
-Treat 
+- **1. Visualize all the elements of the list as a complete binary tree**
+  
+Treat the elements of the given array as the nodes of a tree. Notice how tha below binary tree is a *complete binary tree* but DOESN'T satisfy the properties of a **max-heap** since element 8 has an element greater than itself as its *child*.
+
+![image](https://github.com/trucdg/python-heapq/assets/91285203/2b4cf965-2685-4546-b65c-35da66de2977)
 
 
+- **2. Construct the heap property using swapping and comparison**
 
+Start from comparing the values of children nodes with that of the parent. If the parent is smaller than the values of the children, swap it. Swapping is done with the **larger of the 2 children**. This process is repeated until every node satisfy the property of a *max-heap*.
 
+Here, we start comparing 8 with 15 and 6. Since 15 > 6 (15 is the larger of the 2 children of 8), and 15 > 8, we swap their positions. 
 
+![image](https://github.com/trucdg/python-heapq/assets/91285203/514c44cd-ef53-450a-a1a5-9663a14c23b0)
 
+Again, the max-heap property is still not satisfied since 15 > 10. Therefore, we perform the above step again
+
+![image](https://github.com/trucdg/python-heapq/assets/91285203/8c284991-4ac1-4609-9b65-e15dbe545ded)
+
+**Note:**
+- One interesting thing to note here is that **a note can be heapified if and only if all the children nodes are already heapified. This is the reason why we *start from the bottom-most-sub-tree***.
+- This step is also performed using recursion. We create a function called heapify() that works by dividing the tree into smaller sub-trees and then comparing the values of parents with that of children in each sub-tree.
+- Notice that the number of comparisons are reduced slightly. This way, we can significantly reduce the comparisons if there are many elements to be added.
+- Here, the time complexity would be equal to the height of tree O(logn). This is because a node will be compared only to its parents, and thus, will be swapped at most O(logn) times.
+
+## DELETION from HEAP
+
+Let us consider the following max-heap
+
+![image](https://github.com/trucdg/python-heapq/assets/91285203/89d124a7-e5e4-4533-b882-723cf55201e9)
+
+To delete the elements from a heap, we follow the below steps:
+- **1. Search for the element to be deleted and swap it with the last element in the heap**. Let's say we want to delete 10
+We first want to swap 10 with 6 (which is the last element):
+
+![image](https://github.com/trucdg/python-heapq/assets/91285203/90b93f83-48bc-42c3-b939-2e58e6866923)
+
+- **2. Remove the element from the tree.**
+
+Notice that the remaining heap has lost the max-heap property. So in the next step, we need to heapify it again.
+
+![image](https://github.com/trucdg/python-heapq/assets/91285203/689cbbcb-1495-4a7a-b018-965829aafaf8)
+
+- **3. Heapify the tree again.**
+- 
+![image](https://github.com/trucdg/python-heapq/assets/91285203/2947efd5-ab3b-4126-984c-9f38834aaef0)
 
 
 
