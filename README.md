@@ -47,10 +47,29 @@ These functions are given below:
 | 1 | heapify | converts an iteratble into a heap data structure, in-place, in linear time. After using this function, the heap's elements will be reordered so that it has the property of a min heap| O(n) |
 | 2 | heappush| inserts an element into a heap, and after insertion, the order is adjusted accordingly so that the heap structure is maintained. | O(log(n)) |
 | 3 | heappop | removes and returns the smallest element of the heap, and after removal, the order is adjusted accordingly so that the heap structure is maintained. | O(log(n))|
-| 4 | heappushpop | push and pop lement into and out of the heap. The function first pushes the provided element to the heap and then pops the smallest element from the heap. | O(log(n)) |
+| 4 | heappushpop | push and pop element into and out of the heap. The function first pushes the provided element to the heap and then pops the smallest element from the heap. | O(log(n)) |
 | 5 | heapreplace | push and pop elements in the heap. But instead of push then pop, it first pops the smallest element from the heap, then pushes the provided element back into the heap (the order is in reverse with **heappushpop** | O(log(n)) |
 | 6 | nlargest | returns the k-largest elements from the heap | O(log(k)) |
 | 7 | nsmallest | returns the k-smallest elements from the heap | O(log(k)) |
+
+# Heap in Python
+```python
+# Import heapq module to implement heap
+import heapq
+
+# Initialize arr
+arr = [9, 7, 2, 8, 6]
+
+# use heapify to convert array into a heap
+heapq.heapify(arr)
+# push element into the heap
+heapq.heappush(arr,1)
+# pop element from the heap
+heapq.heappop(arr)
+# simultaneously push and then pop
+heapq.heappushpop(arr,10)
+
+```
 
 ## Heap Data Structure Operations
 We will be discussing these operations over a max-heap since the same operations can be applied to a min-heap
